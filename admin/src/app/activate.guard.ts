@@ -1,24 +1,18 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Observable, from } from 'rxjs';
+import { HardcodedAuthenticationService } from './service/hardcoded-authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ActivateGuard implements CanActivate, CanActivateChild, CanLoad {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+export class ActivateGuard implements CanActivate{
+
+  constructor(public svc: HardcodedAuthenticationService, public router: Router) {}
+  canActivate(): boolean {
+    if (!this.svc.isUserLoggedIn()) {
+      this.router.navigate(['login']);
+      return false;
+    }
     return true;
-  }
-  canActivateChild(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
-  }
-  canLoad(
-    route: Route,
-    segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    return true;
-  }
-}
+  }}

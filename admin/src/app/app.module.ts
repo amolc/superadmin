@@ -36,6 +36,9 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { ItemComponent } from './item/item.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { DashboardmodelComponent } from './dashboardmodel/dashboardmodel.component';
+import { ActivateGuard } from './activate.guard';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,9 @@ import { ItemComponent } from './item/item.component';
     EditprofileComponent,
     CategoryComponent,
     SubCategoryComponent,
-    ItemComponent
+    ItemComponent,
+    EditCategoryComponent,
+    DashboardmodelComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +80,7 @@ import { ItemComponent } from './item/item.component';
     FormsModule,
     NgbModule
   ],
-  providers: [HardcodedAuthenticationService],
+  providers: [ActivateGuard,HardcodedAuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

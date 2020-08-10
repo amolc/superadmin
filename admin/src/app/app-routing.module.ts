@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {ActivateGuard} from './activate.guard';
 import { FormsComponent } from './forms/forms.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { TablesComponent } from './tables/tables.component';
@@ -24,6 +25,8 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { ItemComponent } from './item/item.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { DashboardmodelComponent } from './dashboardmodel/dashboardmodel.component';
 
 const routes: Routes = [
  { path: '', component:LoginComponent },
@@ -32,11 +35,13 @@ const routes: Routes = [
   { path: 'category', component:CategoryComponent },  
   { path: 'subcategory', component:SubCategoryComponent }, 
   { path: 'item', component:ItemComponent },  
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent , canActivate:[ActivateGuard]},
+  { path: 'dashboardmodel', component:DashboardmodelComponent},
   { path: 'user', component: UserComponent },
 
  { path: 'editprofile', component: EditprofileComponent },
-  
+
+  { path: 'editcategory', component:EditCategoryComponent},
   { path: 'test', component:TestComponent},
   { path: 'forms', component: FormsComponent },
   { path: 'buttons', component: ButtonsComponent },

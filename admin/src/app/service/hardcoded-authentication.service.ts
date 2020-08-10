@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,8 +18,15 @@ export class HardcodedAuthenticationService {
     return false;
   }
    isUserLoggedIn(){
-   let user = sessionStorage.getItem('authenticaterUser')
-       return !(user === null)
+    let user = sessionStorage.getItem('authenticaterUser')
+      return !(user === null)
+
+}
+
+   isAdminRights():boolean{
+     return true;
+
+
    }
   
   

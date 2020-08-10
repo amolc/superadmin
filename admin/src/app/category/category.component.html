@@ -1,17 +1,20 @@
-
-<div class="container">
-  <div class="col-xm-xm">
-    <h1 class="card-title">User Details</h1>
-  </div>
-  
-  <button type="button" class="btn btn-info"><i class="mdi mdi-upload"></i>Add</button>
-  </div>
-    
+div class="container-scroller">
+  <app-navbar></app-navbar>
+  <div class="container-fluid page-body-wrapper">
+    <app-sidebar></app-sidebar>
+     <div class="main-panel">
+      <div class="content-wrapper">
+<div class="left-btn">
+  <button class="btn"><h3>Category Details</h3></button>
+</div>
+<div class="right-btn">
+  <button class="btn"class="btn btn-info" [routerLink]="[ '/editcategory' ]" routerLinkActive="active"><i class="mdi mdi-upload"></i>Add</button>
+</div>
     <div class="table-responsive">
       
       
     
-    <table class="table">
+    <table class="table border border-primary">
       
       
       <thead>
@@ -63,3 +66,7 @@
       </td>
     </tbody>
     </table> </div>
+    <app-footer></app-footer>
+  </div>
+  </div>
+  </div> 
