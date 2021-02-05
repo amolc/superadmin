@@ -21,7 +21,8 @@ app.use(bodyParser.json({type: "application/json"}));
 app.use(bodyParser.raw({limit: "50mb" }));
 
 
-app.use('/', express.static(__dirname + '/admin/dist/admin'));
+// app.use('/', express.static(__dirname + '/admin/dist/admin'));
+app.use('/', express.static(__dirname + '/www'));
 app.use('/docs', express.static(__dirname + '/apidoc'));
 app.use('/assets', express.static(__dirname + '/assets'));
 

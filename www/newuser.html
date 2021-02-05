@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shipaudit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+ <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 200%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    .form-control {
+    
+    float: left;
+    width: 45%;
+    margin-left: 20px;
+    
+    }
+    .btn{
+      padding-left:45px;
+      padding-right:45px;
+    }
+  </style>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/fountainlogo.jpeg" width="60px"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Login</a></li>
+          <li><a href="createstaff.html">Create Staff</a></li>
+          <li><a href="liststaff.html">List Staff</a></li>
+          <li><a href="createcompany.html">Create Company</a></li>
+          <li><a href="companylist.html">Company List</a></li>
+          <li><a href="companystaffdetail.html">Company Staff </a></li>
+          <li><a href="companystafflist.html">Company Staff List</a></li>
+          <li><a href="newvesseldetails.html">Vessel </a></li>
+          <li><a href="vessellist.html">Vessel List</a></li>
+          <li><a href="auditlist.html">Audit Planner</a></li>
+          <li><a href="audit-planner.html">Audit Planner</a></li>
+          <li><a href="voyage-phases.html">Voyage Phases</a></li>
+          <li><a href="phases1-dv.html">Phase 1 - DV</a></li>
+          <li><a href="phases1-pv.html">Phase 1 - PV </a></li>
+          <li><a href="phases2-dv.html">Phase 2 - DV</a></li>
+          <li><a href="phases3-pv.html">Phase 3 - PV </a></li>
+          <li><a href="phases3-dv.html">Phase 3 - DV</a></li>
+          <li><a href="phases4-pv.html">Phase 4 - PV </a></li>
+          <li><a href="phases4-dv.html">Phase 4 - DV</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <img src="images/fountainlogo.jpeg" width="100%">
+      <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="index.html">Login</a></li>
+          <li><a href="createstaff.html">Create Staff</a></li>
+          <li><a href="liststaff.html">List Staff</a></li>
+          <li><a href="createcompany.html">Create Company</a></li>
+          <li><a href="companylist.html">Company List</a></li>
+          <li><a href="companystaffdetail.html">Company Staff </a></li>
+          <li><a href="companystafflist.html">Company Staff List</a></li>
+          <li><a href="newvesseldetails.html">Vessel </a></li>
+          <li><a href="vessellist.html">Vessel List</a></li>
+          <li><a href="audit-planner.html">Audit Planner</a></li>
+          <li><a href="auditlist.html">Audit List</a></li>
+          <li><a href="voyage-phases.html">Voyage Phases</a></li>
+          <li><a href="phases1-dv.html">Phase 1 - DV</a></li>
+          <li><a href="phases1-pv.html">Phase 1 - PV </a></li>
+          <li><a href="phases2-dv.html">Phase 2 - DV</a></li>
+          <li><a href="phases3-pv.html">Phase 3 - PV </a></li>
+          <li><a href="phases3-dv.html">Phase 3 - DV</a></li>
+          <li><a href="phases4-pv.html">Phase 4 - PV </a></li>
+          <li><a href="phases4-dv.html">Phase 4 - DV</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well text-center">
+        <h4>NEW USER <i class='far fa-user-circle' style="font-size:28px;"></i></h4>
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <div class="">
+            <h4>New User Data</h4>
+            <hr>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>NAME</th>
+                    <th>Email Id</th>
+                    <th>Phone Number</th>
+                    <th></th>
+                    
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ElianoraVas</td>
+                    <td>abc@abc.com</td>
+                    <td>1234567890</td>
+                    
+                    
+                    <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
+                  </tr>
+                  <tr>
+                      <td>ElianoraVas</td>
+                      <td>abc@abc.com</td>
+                      <td>1234567890</td>
+                      
+                      <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
+                    </tr>
+                    <tr>
+                      <td>ElianoraVas</td>
+                      <td>abc@abc.com</td>
+                      <td>1234567890</td>
+                      
+                      <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
+                    </tr>
+                    <tr>
+                      <td>ElianoraVas</td>
+                      <td>abc@abc.com</td>
+                      <td>1234567890</td>
+                      
+                      <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+
+      </div>
+     
+
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
