@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Shipaudit</title>
+  <title>{$ jsondata.getallusers $}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -131,14 +131,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>ElianoraVas</td>
-                    <td>abc@abc.com</td>
-                    <td>1234567890</td>
-                    
-                    
-                    <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
-                  </tr>
+                    {% for each in getallusers %}
+                    <tr>
+                        <td>{$ each.fname $}</td>
+                        <td>{$ each.lname $}</td>
+                        <td>{$ each.phone $}</td>
+                        
+                        
+                        <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
+                      </tr>
+                    {% endfor %}
+                  
+
                   <tr>
                       <td>ElianoraVas</td>
                       <td>abc@abc.com</td>

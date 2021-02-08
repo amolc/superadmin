@@ -48,6 +48,7 @@ app.use('/assets', express.static(__dirname + '/assets'));
 
 app.get('//', routes.index);
 app.get('/index.html', routes.index);
+app.get('/getallusers.html', routes.getallusers);
 
 global.appRoot = path.resolve(__dirname);
 app.listen(5001);
