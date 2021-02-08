@@ -67,6 +67,7 @@
           <li class="active"><a href="index.html">Login</a></li>
           <li><a href="getallusers.html">Getall Users</a></li>
           <li><a href="getallparcels.html">Getall Parcels</a></li>
+          
       </ul><br>
     </div>
     <br>
@@ -90,20 +91,20 @@
             <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>NAME</th>
-                    <th>Email Id</th>
-                    <th>Phone Number</th>
+                    <th>Status</th>
+                    <th>Message</th>
+                    <th>Data</th>
                     <th></th>
                     
                     
                   </tr>
                 </thead>
                 <tbody>
-                    {% for each in getallusers %}
+                    {% for each in getallparcels %}
                     <tr>
-                        <td>{$ each.fname $}</td>
-                        <td>{$ each.lname $}</td>
-                        <td>{$ each.phone $}</td>
+                        <td>{$ each.pickupfname $}</td>
+                        <td>{$ each.pickuplname $}</td>
+                        <td>{$ each.pickupmobile $}</td>
                         
                         
                         <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
@@ -111,20 +112,8 @@
                     {% endfor %}
                   
 
-                  <tr>
-                      <td>ElianoraVas</td>
-                      <td>abc@abc.com</td>
-                      <td>1234567890</td>
-                      
-                      <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
-                    </tr>
-                    <tr>
-                      <td>ElianoraVas</td>
-                      <td>abc@abc.com</td>
-                      <td>1234567890</td>
-                      
-                      <td><button>Delete</button> <button style="margin-left:5px;">Edit</button> <button style="margin-left:5px;">Preview</button></td>
-                    </tr>
+                  
+                    
                     <tr>
                       <td>ElianoraVas</td>
                       <td>abc@abc.com</td>
