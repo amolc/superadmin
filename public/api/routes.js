@@ -81,5 +81,25 @@ exports.getallparcels = function (req, res) {
 
 };
 
+exports.newuser = function (req, res) {
+	console.log("createUser call");
+	var data1 = [];
+	var jsondata = {
+		seoId: 1,
+		title: 'Get the headphones, camera, laptop, mobile, tablets, speakers, smartwatch & play station Singapore.',
+		description: 'Gadgetsinasia launches gaming headphones, cameras, wireless speakers, mobile, laptop, tablet, iPads, smartwatch & PlayStation at the lowest price with the top brands online in Singapore.',
+		keywords: 'Best Gaming Headphones, Cheap iPad Online, Best Smartwatch Singapore, Cheap and Best Smartphone, Digital Camera, Apple MacBook Singapore, Best Bluetooth Speaker ',
+		special: ''
+	};
+	data1['jsondata'] = jsondata;
+	get_json('parcel/createUser/', function (response1) {
+		console.log(response1);
+		data1['createUser'] = response1;
+		res.render('createUser', data1);
+		
+	});
+
+};
+
 
 

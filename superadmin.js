@@ -50,6 +50,7 @@ app.get('//', routes.index);
 app.get('/index.html', routes.index);
 app.get('/getallusers.html', routes.getallusers);
 app.get('/getallparcels.html', routes.getallparcels);
+app.get('/newuser.html', routes.newuser);
 
 global.appRoot = path.resolve(__dirname);
 app.listen(5001);
