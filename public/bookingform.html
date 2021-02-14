@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{$ jsondata.getallusers $}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+ <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 200%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    .form-control {
+    
+    float: left;
+    width: 45%;
+    margin-left: 20px;
+    
+    }
+    .btn{
+      padding-left:45px;
+      padding-right:45px;
+    }
+  </style>
+  
+</head>
+<body ng-app="myApp" ng-controller="contactus" ng-init="test()">
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="public/images/fountainlogo.jpeg" width="60px"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Login</a></li>
+          <li><a href="getallusers.html">Getall Users</a></li>
+          <li><a href="getallparcels.html">Getall Parcels</a></li>
+          <li><a href="bookingform.html">Booking Form</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <img src="public/images/fountainlogo.jpeg" width="100%">
+      <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="index.html">Login</a></li>
+          <li><a href="getallusers.html">Getall Users</a></li>
+          <li><a href="getallparcels.html">Getall Parcels</a></li>
+          <li><a href="bookingform.html">Booking Form</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well text-center">
+        <h4>USER <i class='far fa-user-circle' style="font-size:28px;"></i></h4>
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <div class="">
+            <h4>BOOKING FORM</h4>
+            <hr>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+          
+        <div class="col-sm-12"><H2 style="padding-left:20px;">FORM</H2>
+          <form class="form-horizontal" name="myForm" novalidate>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="name">NAME:</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_name" id="inputError" ng-model="data.to_name" placeholder="Enter Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="country">Country:</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_country" id="inputError" ng-model="data.to_country">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="Address1">Address 1:</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_address" id="inputError" ng-model="data.to_address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="Address2">Address 2:</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_address2" id="inputError" ng-model="data.to_address2">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="postal">Postal</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_postal" id="inputError" ng-model="data.to_postal">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="city">City</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_city" id="inputError" ng-model="data.to_city">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="state">State</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="to_state" id="inputError" ng-model="data.to_state">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="phone">Phone</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="phone" name="to_phone" ng-model="data.to_phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Email</label>
+              <div class="col-sm-10">
+                  <input type="email" class="form-control" name="to_email" ng-model="data.to_email">
+              </div>
+            </div>
+            
+            
+          </form>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+            <H2 style="padding-left:20px;">TO</H2>
+          <form class="form-horizontal" name="myForm" novalidate>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">NAME:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_name" id="inputError" ng-model="data.to_name" placeholder="Enter Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="country">Country:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_country" id="inputError" ng-model="data.to_country">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="Address1">Address 1:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_address" id="inputError" ng-model="data.to_address">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="Address2">Address 2:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_address2" id="inputError" ng-model="data.to_address2">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="postal">Postal</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_postal" id="inputError" ng-model="data.to_postal">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="city">City</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_city" id="inputError" ng-model="data.to_city">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="state">State</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="to_state" id="inputError" ng-model="data.to_state">
+                </div>
+              </div>
+              <div class="form-group">
+                  <label class="control-label col-sm-2" for="phone">Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="phone" name="to_phone" ng-model="data.to_phone">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" name="to_email" ng-model="data.to_email">
+                </div>
+              </div>
+
+            <hr>
+<h3 style="padding-left:10%;">Parcel Information</h3>
+            <hr>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Total Weight Of Parcel</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="weight" id="inputError" ng-model="data.weight">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Number Of Boxess</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="boxess" id="inputError" ng-model="data.boxess">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Packing List</label>
+                <div class="col-sm-10">
+                    <textarea rows="4" cols="50" class="form-control" id="packinglist" ng-model="data.packinglist"
+                    name="packinglist"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Notes</label>
+                <div class="col-sm-10">
+                    <textarea rows="4" cols="50" class="form-control" id="notes" ng-model="data.notes"
+                    name="notes"></textarea>
+                </div>
+              </div>
+            
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+     
+
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

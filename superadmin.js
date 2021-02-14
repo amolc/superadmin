@@ -51,6 +51,8 @@ app.get('/index.html', routes.index);
 app.get('/getallusers.html', routes.getallusers);
 app.get('/getallparcels.html', routes.getallparcels);
 app.get('/newuser.html', routes.newuser);
+app.get('/bookingform.html', routes.bookingform);
+
 
 global.appRoot = path.resolve(__dirname);
 app.listen(5001);
